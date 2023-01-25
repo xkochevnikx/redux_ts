@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { UseTypedSelector } from "../hooks/UseTypedSelector";
-import { UserActions } from "../hooks/UseActions";
+import { UseActions } from "../hooks/UseActions";
 
 const UserList: React.FC = () => {
   const { users, loading, error } = UseTypedSelector(state => state.user);
 
-  const { fetchUsers } = UserActions();
+  //? тут у нас кастомный хук который заменяет диспатч и позволяет вызываеть экшн криэйтер напрямую
+  const { fetchUsers } = UseActions();
 
   useEffect(() => {
     fetchUsers();

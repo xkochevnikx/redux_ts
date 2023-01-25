@@ -2,6 +2,7 @@ import axios from "axios";
 import { Dispatch } from "redux";
 import { UserAction, UserActionTypes } from "../../Types/User";
 
+//? экшн криэйтер получает данные с сервера и в зависимости от результата вызывает диспатч с типом для редюсера
 export const fetchUsers = () => {
   return async (dispatch: Dispatch<UserAction>) => {
     try {

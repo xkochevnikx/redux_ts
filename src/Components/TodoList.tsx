@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { UserActions } from "../hooks/UseActions";
+import { UseActions } from "../hooks/UseActions";
 import { UseTypedSelector } from "../hooks/UseTypedSelector";
 
 const TodoList: React.FC = () => {
@@ -9,7 +9,7 @@ const TodoList: React.FC = () => {
 
   const pages = [1, 2, 3, 4, 5];
 
-  const { fetchTodos, setTodoPage } = UserActions();
+  const { fetchTodos, setTodoPage } = UseActions();
 
   useEffect(() => {
     fetchTodos(page, limit);
